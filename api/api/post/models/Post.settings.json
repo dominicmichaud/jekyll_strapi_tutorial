@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "type": "string"
+    },
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "permission": {
+      "model": "permission",
+      "via": "posts",
+      "plugin": "users-permissions"
+    }
+  }
+}
